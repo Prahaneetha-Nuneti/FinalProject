@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <div class="content">
+    <!-- Page Content -->
+    <!-- header -->
+    <app-header></app-header>
+     <p class="text-center ">
+        <ngb-alert class="expandable" *ngIf="successMessage" type="success" (close)="successMessage = ''">{{ successMessage }}</ngb-alert>
+        </p>
+    <!-- /. header -->
+    <div class="container bodyele">
+      <body>
+
+        <router-outlet></router-outlet>
+      </body>
+      <!-- /. body -->
+    </div>
+    <!--/.container-->
+  </div>
+  <!-- /. content -->
+  <!-- Footer -->
+<app-footer></app-footer>
+<!-- /. Footer -->
+
+</div>
+<!-- wrapper -->
+

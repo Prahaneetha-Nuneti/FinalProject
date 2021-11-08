@@ -1,0 +1,42 @@
+<div *ngIf="loading" class="d-flex justify-content-center">
+  <div class="spinner-border" role="status">
+    <span class="sr-only">Loading...</span>
+  </div>
+</div>
+<div *ngIf="!loading" class="row">
+  <div class="col-lg-3  ">
+    <app-book-category showFilter="yes" ></app-book-category>
+    <!-- /.list group -->
+  </div>
+  <!-- /.col-lg-3 -->
+
+  <div class="col-lg-9 c">
+    <div class="row" *ngIf="book">
+      <!-- to dispplay book Image -->
+      <div class="col-12 col-md-5">
+        <div class="thumbnail" >
+          <img src="{{ book.imageUrl }}" width="270" height="370" />
+        </div>
+      </div>
+      <!-- to display book details -->
+      <div class="col-12 col-md-5">
+        <h3>{{ book.name }}</h3>
+        <hr />
+        <p>{{ book.description }}</p>
+        <hr />
+        <h4>Price <strong> &#8377; </strong> {{ book.unitPrice }}</h4>
+        <hr />
+        <h6>Qty left: {{ book.unitsInStock }}</h6>
+        <hr />
+        <a class="btn btn-warning" routerLink="/books">
+          <i class="fas fa-arrow-left"></i> Back</a
+        >
+        <a class="btn btn-primary ml-2" (click)="addToCart(book)">
+          <i class="fas fa-cart-arrow-down"> </i>
+          Add to Cart
+        </a>
+      </div>
+    </div>
+  </div>
+  <!-- /.col-lg-9 -->
+</div>

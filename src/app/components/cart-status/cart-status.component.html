@@ -1,0 +1,10 @@
+<a class="btn btn-success font-weight-bold  badge-pill cartcomp" (click)="checkout()">
+
+  {{
+    totalPrice |currency:'INR'
+  }}
+
+  &nbsp;<i class="fas fa-cart-arrow-down" ></i>
+  &nbsp;
+  <span class="badge-pill text-dark cartnum">{{totalQuantity}}</span>
+</a>
